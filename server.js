@@ -10,8 +10,6 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
-
-
 // database
 
 const DB = process.env.DATABASE.replace(
@@ -41,4 +39,3 @@ process.on('unhandledRejection', (err) => {
     process.exit(1);
   });
 });
-
