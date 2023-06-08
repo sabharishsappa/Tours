@@ -12,6 +12,8 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const tourRouter = require('./Routes/tourRoutes');
 const userRouter = require('./Routes/userRoutes');
+const reviewRouter = require("./Routes/reviewRoutes")
+
 
 //Global MiddleWare
 
@@ -25,7 +27,7 @@ if (process.env.NODE_ENV == 'development') {
 
 // limiting uncoming requests from same API
 const limiter = rateLimit({
-  max: 10,
+  max: 100,
   window: 60 * 60 * 1000,
   message: 'Too many requests from this IP, please try again after an hour...',
 });
@@ -67,6 +69,7 @@ app.use((req, res, next) => {
 
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
+app.use("/api/v1/reviews",reviewRouter);
 
 // routeHandler
 
