@@ -61,7 +61,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
   // validating username and password
   if (!user || !(await user.correctPassword(password, user.password))) {
-    return next(new AppError('Incorrect Username or password', 401));
+    return next(new AppError('Incorrect Email or password', 401));
   }
 
   // if ok sending token
