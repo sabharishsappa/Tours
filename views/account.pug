@@ -16,7 +16,7 @@ block content
           +navItem('#', 'My bookings', 'briefcase')
           +navItem('#', 'My reviews', 'star')
           +navItem('#', 'Billing', 'credit-card')
-
+          
         - if (user.role === 'admin')
           .admin-nav
             h5.admin-nav__heading Admin
@@ -32,7 +32,7 @@ block content
           
           //- WITHOUT API
           //- form.form.form-user-data(action='/submit-user-data' method='POST')
-          
+
           //- WITH API
           form.form.form-user-data
             .form__group
