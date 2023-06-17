@@ -1,28 +1,75 @@
 const nodemailer = require('nodemailer');
+const pug = require('pug');
+const {htmlToText} = require('html-to-text');
 
-const sendEmail = async (options) => {
-  // creating Transporter
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-    auth: {
-      user: process.env.EMAIL_USERNAME,
-      pass: process.env.EMAIL_PASSWORD,
-    },
-    // activating in gmail less secure option as 500 limit more than 500 it automatically detects as a spam
-  });
+module.exports = class Email {
+  constructor(user, url) {
+    this.to = user.email;
+    this.firstName = user.name.split(' ')[0];
+    this.url = url;
+    this.from = `Sabharish Sappa<${process.env.EMAIL_FROM}>`;
+  }
 
-  // Defining Email options
-  const mailOptions = {
-    from: 'Sabharish <sabharish@gmail.com>',
-    to: options.email,
-    text: options.message,
-    subject: options.subject,
-    // html:
-  };
+  newTransport() {
+    if (process.env.NODE_ENV === 'production') {
+      // Sendgrid
+      return nodemailer.createTransport({
+        // service: 'Brevo',
+        host: process.env.SEND_IN_BLUE_HOST,
+        port: process.env.SEND_IN_BLUE_PORT,
+        auth: {
+          user: process.env.SEND_IN_BLUE_LOGIN,
+          pass: process.env.SEND_IN_BLUE_PASSWORD,
+        },
+      });
+    }
 
-  // sending email
-  await transporter.sendMail(mailOptions);
+    return nodemailer.createTransport({
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
+      auth: {
+        user: process.env.EMAIL_USERNAME,
+        pass: process.env.EMAIL_PASSWORD,
+      },
+      // activating in gmail less secure option as 500 limit more than 500 it automatically detects as a spam
+    });
+  }
+
+  // Send the actual email
+  async send(template, subject) {
+    // 1) Render HTML based on a pug template
+    const html = pug.renderFile(`${__dirname}/../views/email/${template}.pug`, {
+      firstName: this.firstName,
+      url: this.url,
+      subject
+    });
+
+    // 2) Define email options
+    const mailOptions = {
+      from: this.from,
+      to: this.to,
+      subject,
+      html,
+      text: htmlToText(html)
+    };
+
+  
+    await this.newTransport().sendMail(mailOptions,(error, info) => {
+      if (error) {
+        console.error('Error sending email:', error);
+      } else {
+        console.log('Email sent:', info.response)
+      }});
+  }
+
+  async sendWelcome() {
+    await this.send('welcome', 'Welcome to the Natours Family!');
+  }
+
+  async sendPasswordReset() {
+    await this.send(
+      'passwordReset',
+      'Your password reset token (valid for only 10 minutes)'
+    );
+  }
 };
-
-module.exports = sendEmail;

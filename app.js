@@ -16,6 +16,7 @@ const tourRouter = require('./Routes/tourRoutes');
 const userRouter = require('./Routes/userRoutes');
 const reviewRouter = require('./Routes/reviewRoutes');
 const viewRouter = require('./Routes/viewRoutes');
+const bookingRouter = require("./Routes/bookingRoutes")
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
@@ -26,7 +27,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // setting secure HTTP headers
-app.use(helmet());
+// app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false }));
 
 // logging developement mode
 if (process.env.NODE_ENV == 'development') {
@@ -78,6 +80,7 @@ app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
+app.use('/api/v1/bookings', bookingRouter);
 
 // routeHandler
 
