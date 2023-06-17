@@ -2,7 +2,6 @@ const path = require('path');
 const express = require('express');
 const fs = require('fs');
 const morgan = require('morgan');
-const app = express();
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -19,8 +18,13 @@ const reviewRouter = require('./Routes/reviewRoutes');
 const viewRouter = require('./Routes/viewRoutes');
 const bookingRouter = require("./Routes/bookingRoutes")
 
+// Start Express app
+const app = express();
+
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
+
+app.enable('trust proxy');
 
 //Global MiddleWare
 
