@@ -1,12 +1,11 @@
 const Tour = require('../models/tourModel');
 const User = require('../models/userModel');
-const Booking = require('../models/bookingsModel')
+const Booking = require('../models/bookingsModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
-
-
-const csp = "default-src 'self' https://js.stripe.com/v3/ https://cdnjs.cloudflare.com https://api.mapbox.com; base-uri 'self'; block-all-mixed-content; connect-src 'self' https://js.stripe.com/v3/ https://cdnjs.cloudflare.com/ https://*.mapbox.com/; font-src 'self' https://fonts.google.com/ https: data:;frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' https://js.stripe.com/v3/ https://cdnjs.cloudflare.com/ https://api.mapbox.com/ blob:; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;";
+const csp =
+  "default-src 'self' https://js.stripe.com/v3/ https://cdnjs.cloudflare.com https://api.mapbox.com; base-uri 'self'; block-all-mixed-content; connect-src 'self' https://js.stripe.com/v3/ https://cdnjs.cloudflare.com/ https://*.mapbox.com/; font-src 'self' https://fonts.google.com/ https: data:;frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' https://js.stripe.com/v3/ https://cdnjs.cloudflare.com/ https://api.mapbox.com/ blob:; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;";
 
 exports.getOverview = catchAsync(async (req, res, next) => {
   // 1) Get tour data from collection
@@ -35,7 +34,10 @@ exports.getTour = catchAsync(async (req, res, next) => {
   // 3) Render template using data from 1)
   res
     .status(200)
-    .set('Content-Security-Policy', csp)
+    .set(
+      'Content-Security-Policy',
+      "default-src 'self' https://*.mapbox.com https://js.stripe.com/v3/;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://js.stripe.com/v3/ https://cdnjs.cloudflare.com https://api.mapbox.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;"
+    )
     .render('tour', {
       title: `${tour.name} Tour`,
       tour,
@@ -43,12 +45,9 @@ exports.getTour = catchAsync(async (req, res, next) => {
 });
 
 exports.getLoginForm = (req, res) => {
-  res
-    .status(200)
-    .set('Content-Security-Policy', csp)
-    .render('login', {
-      title: 'Log into your account',
-    });
+  res.status(200).set('Content-Security-Policy', csp).render('login', {
+    title: 'Log into your account',
+  });
 };
 
 exports.getAccount = (req, res) => {
@@ -73,21 +72,19 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getMyTours = catchAsync(async(req,res,next)=>{
+exports.getMyTours = catchAsync(async (req, res, next) => {
   // 1) Find all bookings
-  const bookings = await Booking.find({user:req.user.id})
-
+  const bookings = await Booking.find({ user: req.user.id });
 
   // 2) Find Tours with th returned ids
-  const tourIDs = bookings.map(el=>el.tour);
-  const tours = await Tour.find({_id:{$in:tourIDs}});
+  const tourIDs = bookings.map((el) => el.tour);
+  const tours = await Tour.find({ _id: { $in: tourIDs } });
 
-  res.status(200).render('overview',{
-    title:'My Bookings',
-    tours
-  })
-})
-
+  res.status(200).render('overview', {
+    title: 'My Bookings',
+    tours,
+  });
+});
 
 // exports.updateUserData = catchAsync(async (req, res, next) => {
 //   const updatedUser = await User.findByIdAndUpdate(
