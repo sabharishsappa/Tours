@@ -13426,12 +13426,14 @@ var hideAlert = exports.hideAlert = function hideAlert() {
 };
 
 var showAlert = exports.showAlert = function showAlert(type, msg) {
+  var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 7;
+
   hideAlert();
 
   var markup = '<div class="alert alert--' + type + '">' + msg + '</div>';
   document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
 
-  window.setTimeout(hideAlert, 5000);
+  window.setTimeout(hideAlert, time * 1000);
 };
 },{}],5:[function(require,module,exports) {
 'use strict';
@@ -29788,6 +29790,8 @@ require('core-js/stable');
 
 require('regenerator-runtime/runtime');
 
+var _alerts = require('./alerts');
+
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 // DOM ELEMENTS
@@ -29868,7 +29872,10 @@ if (bookBtn) bookBtn.addEventListener('click', function (e) {
 
   (0, _stripe.bookTour)(tourId);
 });
-},{"@babel/polyfill":6,"./mapbox":2,"./login":5,"./updateSettings":4,"./stripe":3,"core-js/stable":42,"regenerator-runtime/runtime":7}],887:[function(require,module,exports) {
+
+var alertMessage = document.querySelector('body').dataset.alert;
+if (alertMessage) (0, _alerts.showAlert)('success', alertMessage, 20);
+},{"@babel/polyfill":6,"./mapbox":2,"./login":5,"./updateSettings":4,"./stripe":3,"core-js/stable":42,"regenerator-runtime/runtime":7,"./alerts":8}],887:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 

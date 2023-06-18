@@ -5,6 +5,7 @@ import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+import { showAlert } from './alerts';
 
 
 
@@ -72,3 +73,6 @@ if (userPasswordForm)
       const {tourId} = e.target.dataset;
       bookTour(tourId);
     })
+
+const alertMessage = document.querySelector('body').dataset.alert;
+if(alertMessage) showAlert('success',alertMessage,20)
