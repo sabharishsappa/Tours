@@ -8,7 +8,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
-const compression = require('compression')
+const compression = require('compression');
+const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -16,7 +17,8 @@ const tourRouter = require('./Routes/tourRoutes');
 const userRouter = require('./Routes/userRoutes');
 const reviewRouter = require('./Routes/reviewRoutes');
 const viewRouter = require('./Routes/viewRoutes');
-const bookingRouter = require("./Routes/bookingRoutes")
+const bookingRouter = require('./Routes/bookingRoutes');
+const bookingController = require('./controllers/bookingController');
 
 // Start Express app
 const app = express();
@@ -26,6 +28,18 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.enable('trust proxy');
 
+// Implement Cors
+app.use(cors());
+// access- control- allow -origin
+// api.natours.com, frontend : natours.com
+// app.use(cors({
+//   if my origin is origin:'https://wwww.natours.com'
+// }))
+
+// http method
+app.options('*', cors());
+app.options('/api/v1/tours/:id', cors());
+
 //Global MiddleWare
 
 // serving static files
@@ -33,6 +47,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // setting secure HTTP headers
 // app.use(helmet());
+
+app.use(
+  helmet({
+    crossOriginEmbedderPolicy: false,
+  })
+);
+
 // Further HELMET configuration for Security Policy (CSP)
 const scriptSrcUrls = [
   'https://api.tiles.mapbox.com/',
@@ -55,7 +76,7 @@ const connectSrcUrls = [
   'http://127.0.0.1:52191',
   '*.stripe.com',
 ];
- 
+
 const fontSrcUrls = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 app.use(
   helmet.contentSecurityPolicy({
@@ -86,6 +107,12 @@ const limiter = rateLimit({
 });
 app.use('/api', limiter);
 
+app.post(
+  '/webhook-checout',
+  express.raw({ type: 'application/json' }),
+  bookingController.webhookCheckout
+);
+
 // body parser, reading data from body
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
@@ -111,7 +138,7 @@ app.use(
   })
 );
 
-app.use(compression())
+app.use(compression());
 
 // test middleware
 app.use((req, res, next) => {
