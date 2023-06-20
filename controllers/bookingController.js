@@ -1,12 +1,11 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const Tour = require('../models/tourModel');
 const User = require('../models/userModel');
-const booking = require('../models/bookingsModel');
+const Booking = require('../models/bookingsModel');
 const factory = require('./handlerFactory');
 
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
-const Booking = require('../models/bookingsModel');
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently booked tour
@@ -59,12 +58,21 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 //   res.redirect(req.originalUrl.split('?')[0]);
 // });
 
-const createBookingCheckout = async(session) => {
+// const createBookingCheckout = async(session) => {
+//   const tour = session.client_reference_id;
+//   const user = await User.findOne({email:session.customer_email}).id;
+//   const price = session.line_items[0].amount_total/100;
+//   await Booking.create({ tour, user, price });
+// };
+
+const createBookingCheckout = async (session) => {
   const tour = session.client_reference_id;
-  const user = await User.findOne({email:session.customer_email}).id;
-  const price = session.line_items[0].amount_total/100;
+  const user = (await User.findOne({ email: session.customer_email }))._id;
+  const price = session.amount_total / 100; //// FIX !
+  console.log({ tour, user, price })
   await Booking.create({ tour, user, price });
 };
+
 
 exports.webhookCheckout = (req, res, next) => {
   const signature = req.headers['stripe-signature'];
@@ -80,6 +88,7 @@ exports.webhookCheckout = (req, res, next) => {
   }
 
   if (event.type === 'checkout.session.completed') {
+    console.log("payment compplete")
     createBookingCheckout(event.data.object);
   }
 

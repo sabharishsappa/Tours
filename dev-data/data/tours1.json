@@ -1,0 +1,480 @@
+[
+  {
+    "startLocation": {
+      "description": "Delhi, India",
+      "type": "Point",
+      "coordinates": [77.216721, 28.6448],
+      "address": "1 Rajpath, India Gate, New Delhi, Delhi 110001, India"
+    },
+    "ratingsAverage": 4.9,
+    "ratingsQuantity": 8,
+    "images": ["tour-3-1.jpg", "tour-3-2.jpg", "tour-3-3.jpg"],
+    "startDates": [
+      "2022-03-15T09:00:00.000Z",
+      "2022-05-20T09:00:00.000Z",
+      "2022-09-10T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2955",
+    "name": "The Cultural Trail",
+    "duration": 10,
+    "maxGroupSize": 12,
+    "difficulty": "medium",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a1f4e2f8fb814b56fa185"],
+    "price": 799,
+    "summary": "Immerse yourself in the rich cultural heritage of India",
+    "description": "Embark on a journey to explore the vibrant culture, ancient traditions, and architectural wonders of India. From bustling cities to serene rural landscapes, this tour will take you on a memorable adventure through the heart of India.\nExperience the diverse cuisines, visit historic landmarks, and witness colorful festivals that showcase the beauty and depth of Indian culture. Our knowledgeable guides will ensure you have an enriching and authentic experience throughout the tour.",
+    "imageCover": "tour-3-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2959",
+        "description": "Agra",
+        "type": "Point",
+        "coordinates": [78.017585, 27.175255],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2958",
+        "description": "Jaipur",
+        "type": "Point",
+        "coordinates": [75.787271, 26.912434],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2957",
+        "description": "Varanasi",
+        "type": "Point",
+        "coordinates": [83.001862, 25.317645],
+        "day": 6
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2956",
+        "description": "Mumbai",
+        "type": "Point",
+        "coordinates": [72.877656, 19.07609],
+        "day": 9
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Mumbai, India",
+      "type": "Point",
+      "coordinates": [72.877656, 19.07609],
+      "address": "Gateway of India, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India"
+    },
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 10,
+    "images": ["tour-5-1.jpg", "tour-5-2.jpg", "tour-5-3.jpg"],
+    "startDates": [
+      "2022-05-10T09:00:00.000Z",
+      "2022-08-15T09:00:00.000Z",
+      "2022-11-20T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2953",
+    "name": "The Golden Triangle",
+    "duration": 7,
+    "maxGroupSize": 20,
+    "difficulty": "easy",
+    "guides": ["5c8a21d02f8fb814b56fa189","5c8a201e2f8fb814b56fa186", "5c8a1f292f8fb814b56fa184"],
+    "price": 599,
+    "summary": "Discover the enchanting Golden Triangle of India",
+    "description": "Experience the rich history, magnificent architecture, and vibrant culture of India's Golden Triangle. This tour will take you to three iconic cities: Delhi, Agra, and Jaipur. Explore the bustling streets of Delhi, marvel at the breathtaking Taj Mahal in Agra, and immerse yourself in the royal heritage of Jaipur.\nFrom ancient forts and palaces to colorful markets and delicious cuisine, this journey will leave you with unforgettable memories of India's rich tapestry of sights, sounds, and flavors.",
+    "imageCover": "tour-5-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2956",
+        "description": "Delhi",
+        "type": "Point",
+        "coordinates": [77.216721, 28.6448],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2955",
+        "description": "Agra",
+        "type": "Point",
+        "coordinates": [78.017585, 27.175255],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2954",
+        "description": "Jaipur",
+        "type": "Point",
+        "coordinates": [75.787271, 26.912434],
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Jaipur, India",
+      "type": "Point",
+      "coordinates": [75.7873, 26.9124],
+      "address": "Hawa Mahal, Badi Choupad, Pink City, Jaipur, Rajasthan, India"
+    },
+    "ratingsAverage": 4.2,
+    "ratingsQuantity": 8,
+    "images": ["tour-4-1.jpg", "tour-4-2.jpg", "tour-4-3.jpg"],
+    "startDates": [
+      "2023-07-01T09:00:00.000Z",
+      "2023-08-10T09:00:00.000Z",
+      "2023-09-15T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c295d",
+    "name": "The Royal Heritage",
+    "duration": 7,
+    "maxGroupSize": 12,
+    "difficulty": "medium",
+    "guides": [
+      "5c8a201e2f8fb814b56fa186",
+      "5c8a22c62f8fb814b56fa18b",
+      "5c8a1f292f8fb814b56fa184"
+    ],
+    "price": 699,
+    "summary": "Experience the grandeur of Indian heritage in Jaipur, Agra, and Delhi",
+    "description": "Immerse yourself in the rich cultural heritage of India as you visit the majestic palaces, historic forts, and iconic landmarks of Jaipur, Agra, and Delhi. Marvel at the architectural wonders like the Taj Mahal, Amber Fort, and Red Fort. Indulge in the vibrant local markets and savor the delicious Indian cuisine.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "imageCover": "tour-4-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c295e",
+        "description": "Amber Fort",
+        "type": "Point",
+        "coordinates": [75.859091, 26.9856],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c295f",
+        "description": "Taj Mahal",
+        "type": "Point",
+        "coordinates": [78.042155, 27.1751],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2960",
+        "description": "Red Fort",
+        "type": "Point",
+        "coordinates": [77.24102, 28.6562],
+        "day": 5
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2961",
+        "description": "Hawa Mahal",
+        "type": "Point",
+        "coordinates": [75.8223, 26.9253],
+        "day": 7
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Manali, India",
+      "type": "Point",
+      "coordinates": [77.1734, 32.2396],
+      "address": "Mall Road, Manali, Himachal Pradesh, India"
+    },
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 9,
+    "images": ["tour-6-1.jpg", "tour-6-2.jpg", "tour-6-3.jpg"],
+    "startDates": [
+      "2023-09-01T09:00:00.000Z",
+      "2023-10-10T09:00:00.000Z",
+      "2023-11-15T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2962",
+    "name": "The Himalayan Expedition",
+    "duration": 8,
+    "maxGroupSize": 10,
+    "difficulty": "medium",
+    "guides": [
+      "5c8a23412f8fb814b56fa18c",
+      "5c8a22c62f8fb814b56fa18b",
+      "5c8a21f22f8fb814b56fa18a"
+    ],
+    "price": 1299,
+    "summary": "Embark on an epic expedition to explore the majestic Himalayas",
+    "description": "Immerse yourself in the breathtaking beauty of the Himalayas as you embark on an unforgettable expedition. Trek through stunning mountain trails, witness panoramic views of snow-capped peaks, and experience the rich local culture and traditions. This adventure is designed for experienced trekkers and nature enthusiasts who seek a thrilling and rewarding journey.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "imageCover": "tour-6-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2963",
+        "description": "Rohtang Pass",
+        "type": "Point",
+        "coordinates": [77.3681, 32.3916],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2964",
+        "description": "Chandratal Lake",
+        "type": "Point",
+        "coordinates": [77.6052, 32.4617],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2965",
+        "description": "Valley of Flowers",
+        "type": "Point",
+        "coordinates": [76.7667, 34.7297],
+        "day": 5
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2966",
+        "description": "Triund",
+        "type": "Point",
+        "coordinates": [76.3242, 32.3015],
+        "day": 7
+      }
+    ]
+  },
+
+  {
+    "startLocation": {
+      "description": "Mumbai, India",
+      "type": "Point",
+      "coordinates": [72.8777, 19.076],
+      "address": "Mumbai, Maharashtra, India"
+    },
+    "ratingsAverage": 4.9,
+    "ratingsQuantity": 8,
+    "images": ["tour-7-1.jpg", "tour-7-2.jpg", "tour-7-3.jpg"],
+    "startDates": [
+      "2023-07-05T09:00:00.000Z",
+      "2023-08-10T09:00:00.000Z",
+      "2023-09-15T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2963",
+    "name": "The Golden Triangle",
+    "duration": 7,
+    "maxGroupSize": 12,
+    "difficulty": "difficult",
+    "guides": ["5c8a21f22f8fb814b56fa18a", "5c8a23412f8fb814b56fa18c"],
+    "price": 1399,
+    "summary": "Discover the rich heritage and cultural wonders of India's Golden Triangle",
+    "description": "Experience the enchanting cities of Delhi, Agra, and Jaipur as you embark on a captivating journey through India's Golden Triangle. Immerse yourself in the vibrant culture, visit iconic landmarks such as the Taj Mahal, explore ancient forts and palaces, and indulge in the delicious flavors of Indian cuisine. This tour is designed to provide a perfect blend of history, architecture, and local experiences.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "imageCover": "tour-7-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2965",
+        "description": "Delhi",
+        "type": "Point",
+        "coordinates": [77.1025, 28.7041],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2964",
+        "description": "Agra",
+        "type": "Point",
+        "coordinates": [78.0081, 27.1767],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2963",
+        "description": "Jaipur",
+        "type": "Point",
+        "coordinates": [75.7873, 26.9124],
+        "day": 5
+      }
+    ]
+  },
+
+  {
+    "startLocation": {
+      "description": "Chennai, India",
+      "type": "Point",
+      "coordinates": [80.2785, 13.0827],
+      "address": "Chennai, Tamil Nadu, India"
+    },
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 8,
+    "images": ["tour-india-1.jpg", "tour-india-2.jpg", "tour-india-3.jpg"],
+    "startDates": [
+      "2023-09-10T09:00:00.000Z",
+      "2023-10-20T09:00:00.000Z",
+      "2023-11-25T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2969",
+    "name": "South Indian Delights",
+    "duration": 12,
+    "maxGroupSize": 12,
+    "difficulty": "medium",
+    "guides": ["5c8a21f22f8fb814b56fa18a", "5c8a23412f8fb814b56fa18c"],
+    "price": 2499,
+    "summary": "Explore the rich culture, vibrant traditions, and scenic landscapes of South India",
+    "description": "Embark on a fascinating journey through South India and immerse yourself in the rich culture, vibrant traditions, and breathtaking landscapes. Discover the ancient temples of Tamil Nadu, cruise along the serene backwaters of Kerala, witness the colorful festivals, savor the aromatic spices and flavors of South Indian cuisine, and experience the warm hospitality of the locals. This tour offers a perfect blend of history, spirituality, nature, and relaxation.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "imageCover": "tour-india-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c296d",
+        "description": "Chennai",
+        "type": "Point",
+        "coordinates": [80.2785, 13.0827],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296c",
+        "description": "Madurai",
+        "type": "Point",
+        "coordinates": [78.1198, 9.9252],
+        "day": 4
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296b",
+        "description": "Kochi",
+        "type": "Point",
+        "coordinates": [76.2673, 9.9312],
+        "day": 8
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296a",
+        "description": "Mysore",
+        "type": "Point",
+        "coordinates": [76.6394, 12.2958],
+        "day": 10
+      }
+    ]
+  },
+
+  {
+    "startLocation": {
+      "description": "Jaipur, Rajasthan, India",
+      "type": "Point",
+      "coordinates": [75.7873, 26.9124],
+      "address": "Jaipur, Rajasthan, India"
+    },
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 9,
+    "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"],
+    "startDates": [
+      "2023-02-15T10:00:00.000Z",
+      "2023-05-10T09:00:00.000Z",
+      "2023-11-20T10:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2974",
+    "name": "The Cultural Odyssey",
+    "duration": 12,
+    "maxGroupSize": 12,
+    "difficulty": "easy",
+    "guides": [
+      "5c8a1f5e2f8fb814b56fa186",
+      "5c8a23412f8fb814b56fa18c",
+      "5c8a22c62f8fb814b56fa18b"
+    ],
+    "price": 2499,
+    "summary": "Explore the rich cultural heritage of India's iconic cities and landmarks",
+    "description": "Embark on a mesmerizing journey through India's vibrant cultural landscape, where ancient traditions and modern life blend seamlessly. Visit the majestic palaces of Jaipur, experience the spirituality of Varanasi, marvel at the iconic Taj Mahal, and immerse yourself in the bustling streets of Delhi. Indulge in traditional Indian cuisine, witness colorful festivals, and interact with friendly locals to gain a deeper understanding of India's diverse heritage.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "imageCover": "tour-9-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2976",
+        "description": "Jaipur",
+        "type": "Point",
+        "coordinates": [75.7873, 26.9124],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2975",
+        "description": "Varanasi",
+        "type": "Point",
+        "coordinates": [83.004, 25.3176],
+        "day": 5
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2977",
+        "description": "Agra",
+        "type": "Point",
+        "coordinates": [78.0098, 27.1767],
+        "day": 8
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2978",
+        "description": "Delhi",
+        "type": "Point",
+        "coordinates": [77.209, 28.6139],
+        "day": 11
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Goa, India",
+      "type": "Point",
+      "coordinates": [15.2993, 74.124],
+      "address": "Goa, India"
+    },
+    "ratingsAverage": 4.9,
+    "ratingsQuantity": 8,
+    "images": ["tour-10-1.jpg", "tour-10-2.jpg", "tour-10-3.jpg"],
+    "startDates": [
+      "2023-01-10T09:00:00.000Z",
+      "2023-03-05T09:00:00.000Z",
+      "2023-10-15T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c2979",
+    "name": "The Beach Paradise",
+    "duration": 7,
+    "maxGroupSize": 16,
+    "difficulty": "easy",
+    "guides": ["5c8a1f7d2f8fb814b56fa187", "5c8a21f22f8fb814b56fa18a"],
+    "price": 1999,
+    "summary": "Relax and unwind on the beautiful beaches of Goa",
+    "description": "Experience the ultimate beach getaway in the enchanting coastal paradise of Goa, India. Bask in the warm sunshine, swim in the crystal-clear waters, and stroll along pristine sandy beaches. Indulge in delicious local cuisine, dance to the rhythmic beats of Goan music, and explore the vibrant markets and historic sites. Whether you're seeking relaxation, adventure, or cultural immersion, Goa has it all.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "imageCover": "tour-10-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c297a",
+        "description": "Goa",
+        "type": "Point",
+        "coordinates": [15.2993, 74.124],
+        "day": 1
+      }
+    ]
+  },
+
+  {
+    "startLocation": {
+      "description": "California, USA",
+      "type": "Point",
+      "coordinates": [-122.29286, 38.294065],
+      "address": "560 Jefferson St, Napa, CA 94559, USA"
+    },
+    "ratingsAverage": 4.4,
+    "ratingsQuantity": 7,
+    "images": ["tour-7-1.jpg", "tour-7-2.jpg", "tour-7-3.jpg"],
+    "startDates": [
+      "2021-02-12T10:00:00.000Z",
+      "2021-04-14T09:00:00.000Z",
+      "2021-09-01T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c296c",
+    "name": "The Wine Taster",
+    "duration": 5,
+    "maxGroupSize": 8,
+    "difficulty": "easy",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
+    "price": 1997,
+    "summary": "Exquisite wines, scenic views, exclusive barrel tastings,  and much more",
+    "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "imageCover": "tour-7-cover.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c296f",
+        "description": "Beringer Vineyards",
+        "type": "Point",
+        "coordinates": [-122.479887, 38.510312],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296e",
+        "description": "Clos Pegase Winery & Tasting Room",
+        "type": "Point",
+        "coordinates": [-122.582948, 38.585707],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296d",
+        "description": "Raymond Vineyard and Cellar",
+        "type": "Point",
+        "coordinates": [-122.434697, 38.482181],
+        "day": 5
+      }
+    ]
+  }
+]
