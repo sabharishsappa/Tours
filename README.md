@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://natours-api-by-sabharish.onrender.com/"><img src="https://github.com/sabharishsappa/Tours/tree/main/public/img/logo-green-round (1).png" alt="Natours" width="200"></a>
+  <a href="https://natours-api-by-sabharish.onrender.com/"><img src="https://github.com/sabharishsappa/Tours/blob/main/public/img/logo-green%20(1).png" alt="Natours" width="200"></a>
   <br>
   Natours
   <br>
@@ -87,7 +87,7 @@ Live demo (Feel free to visit) 👉 : https://natours-api-by-sabharish.onrender.
 * Enter the card details (Test Mood):
   ```
   - Card No. : 4242 4242 4242 4242
-  - Expiry date: 02 / 22
+  - Expiry date: any featured date
   - CVV: 222
   ```
 * Finished!
