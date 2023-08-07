@@ -9,7 +9,7 @@ exports.deleteOne = (Model) =>
       return next(new AppError('No document Found with that ID', 404));
     }
     res.status(200).json({
-      status: 'Sucess',
+      status: 'success',
       data: {
         docDeleted: doc,
       },
@@ -27,7 +27,7 @@ exports.updateOne = (Model) =>
     }
 
     res.status(200).json({
-      status: 'Success',
+      status: 'success',
       data: doc,
     });
   });
@@ -36,7 +36,7 @@ exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const newDoc = await Model.create(req.body);
     res.status(201).json({
-      status: 'Success',
+      status: 'success',
       data: {
         tour: newDoc,
       },
@@ -56,7 +56,7 @@ exports.getOne = (Model, popOptions) =>
       return next(new AppError('No document found with that ID', 404));
     }
     res.status(200).json({
-      status: 'Success',
+      status: 'success',
       data: doc,
     });
   });
@@ -77,7 +77,7 @@ exports.getAll = (Model) =>
 
     // const count = await Tour.countDocuments();
     res.status(200).json({
-      status: 'Success',
+      status: 'success',
       results: docs.length,
       data: {
         docs,

@@ -1,0 +1,39 @@
+extends base
+
+block content
+    main.main
+        .card-container
+        
+            each review in reviews
+                .card
+                    .card__header
+                        .card__picture
+                            .card__picture-overlay &nbsp;
+                            img.card__picture-img(src=`/img/tours/${review.tour.imageCover}`, alt=`${review.tour.name}`)
+                        h3.heading-tertirary
+                            span= review.tour.name
+                    .card__details
+                        h4.card__sub-heading Review
+                        p.card__text= review.review
+                        h4.card__sub-heading= `Rating: ${review.rating}`
+                        .reviews__rating
+                            each star in [1,2,3,4,5]
+                                //- 3/5
+                                svg.reviews__star(class = `reviews__star--${review.rating>=star?'active':'inactive'}`)
+                                    use(xlink:href='/img/icons.svg#icon-star')
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-calendar')
+                            span= review.createdAt.toLocaleString('en-us', {day:'numeric', month: 'long', year: 'numeric'})
+                                
+
+                    .card__footer
+                        if (editButton)
+                            a.btn.btn--icon.btn--round(href=`/editReview/?review=${review.id}`, id='editButton')
+                                svg.review__card__icon#editButton
+                                    use(xlink:href='img/icons.svg#icon-edit')
+                        if (deleteButton)
+                            a.btn.btn--icon.btn--round(href='#', id=`deleteButton`, data-review-id=`${review.id}`)
+                                svg.review__card__icon
+                                    use(xlink:href='img/icons.svg#icon-trash')
+

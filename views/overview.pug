@@ -34,12 +34,19 @@ block content
               span= `${tour.maxGroupSize} people`
 
           .card__footer
-            p
-              span.card__footer-value= `$${tour.price}`
-              | 
-              span.card__footer-text per person
-            p.card__ratings
-              span.card__footer-value= tour.ratingsAverage
-              | 
-              span.card__footer-text= `rating (${tour.ratingsQuantity})`
-            a.btn.btn--green.btn--small(href=`/tour/${tour.slug}`) Details
+            .card__footer-left
+              p
+                span.card__footer-value= `$${tour.price}`
+                | 
+                span.card__footer-text per person
+              p.card__ratings
+                span.card__footer-value= tour.ratingsAverage
+                | 
+                span.card__footer-text= `rating (${tour.ratingsQuantity})`
+            .card__footer-right
+              if (reviewButton)
+                a.btn.btn--green.btn--small(href=`/tour/${tour.slug}`) Details
+                a.btn.btn--green.btn--small(href=`/createReview/${tour._id}`) Review
+                
+              else
+                a.btn.btn--green.btn--small(href=`/tour/${tour.slug}`) Details

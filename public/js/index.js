@@ -3,6 +3,7 @@ import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
+import { createReview, deleteReview ,editReview} from './review';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { showAlert } from './alerts';
@@ -16,6 +17,8 @@ const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
+const submitReview = document.querySelector('.form--review');
+const deleteReviewBtn = document.getElementById('deleteButton');
 
 // DELEGATION
 if (mapbox) {
@@ -36,6 +39,39 @@ if (loginForm) {
 if (logOutBtn) {
   logOutBtn.addEventListener('click', logout);
 }
+
+
+if (submitReview) {
+  submitReview.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const review = document.getElementById('review').value;
+    const rating = document.getElementById('rating').value;
+    const userId = submitReview.dataset.userId;
+    const tourId = submitReview.dataset.tourId;
+    const reviewId = submitReview.dataset.reviewId;
+
+    try {
+      if(reviewId!=='')
+        await editReview(reviewId,review,rating)
+
+      else
+        await createReview(review, rating, tourId, userId);
+      
+    } catch (error) {
+      console.log(error);
+    }
+  });
+}
+
+if(deleteReviewBtn)
+{
+  deleteReviewBtn.addEventListener('click',e=>{
+    const {reviewId} = e.target.dataset;
+    console.log(reviewId)
+    deleteReview(reviewId);
+    console.log("Called delete Review function")
+})}
 
 if (userDataForm)
   userDataForm.addEventListener('submit', (e) => {

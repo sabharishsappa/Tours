@@ -16,6 +16,9 @@ router.get('/tour/:slug', authController.isLoggedIn, viewsController.getTour);
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 router.get('/me', authController.protect, viewsController.getAccount);
 router.get('/my-tours', authController.protect, viewsController.getMyTours);
+router.get('/my-reviews',authController.protect,viewsController.getMyReviews);
+router.get('/createReview/:tourId',authController.protect,viewsController.getReviewForm);
+router.get('/editReview',authController.protect,viewsController.getEditReviewForm);
 
 router.post(
   '/submit-user-data',

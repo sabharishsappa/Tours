@@ -1,0 +1,19 @@
+extends base
+
+block content
+  main.main
+    .login-form
+      h2.heading-secondary.ma-bt-lg= edit ? 'Edit Review' : 'Create Review'
+
+      form.form.form--review(data-user-id=edit ? '' : userId, data-tour-id=edit ? '' : tourId, data-review-id=edit ? reviewId : '')
+        .form__group
+          label.form__label(for='review') Review
+          textarea.form__input#review(required)
+        .form__group.ma-bt-md
+          label.form__label(for='rating') Rating
+          input.form__input#rating(type='number' min='1' max='5' required)
+        .form__group
+          if edit
+            button.btn.btn--green(type='submit') Submit Edit
+          else
+            button.btn.btn--green(type='submit') Submit

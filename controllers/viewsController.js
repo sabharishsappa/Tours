@@ -3,6 +3,7 @@ const User = require('../models/userModel');
 const Booking = require('../models/bookingsModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
+const Review = require('../models/reviewModel')
 
 const csp =
   "default-src 'self' https://js.stripe.com/v3/ https://cdnjs.cloudflare.com https://api.mapbox.com; base-uri 'self'; block-all-mixed-content; connect-src 'self' https://js.stripe.com/v3/ https://cdnjs.cloudflare.com/ https://*.mapbox.com/; font-src 'self' https://fonts.google.com/ https: data:;frame-ancestors 'self'; img-src 'self' data:; object-src 'none'; script-src 'self' https://js.stripe.com/v3/ https://cdnjs.cloudflare.com/ https://api.mapbox.com/ blob:; script-src-attr 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;";
@@ -61,6 +62,37 @@ exports.getAccount = (req, res) => {
   });
 };
 
+exports.getMyReviews = catchAsync(async (req, res, next) => {
+  const reviews = await Review.find({ user: req.user.id });
+
+  res.status(200).render('reviews', {
+    title: 'My Reviews',
+    reviews,
+    editButton:true,
+    deleteButton:true
+  });
+});
+
+exports.getReviewForm = (req, res) => {
+  res.status(200).set('Content-Security-Policy', csp).render('reviewForm', {
+    title: 'Create Review',
+    tourId: req.params.tourId, // Pass the tourId from the route parameter
+    userId: req.user.id
+  });
+};
+
+exports.getEditReviewForm = (req, res) => {
+  const reviewId = req.query.review;
+  
+  console.log(reviewId)
+
+  res.status(200).set('Content-Security-Policy', csp).render('reviewForm', {
+    title: 'Edit Review',
+    reviewId ,
+    edit:true
+  });
+};
+
 exports.updateUserData = catchAsync(async (req, res, next) => {
   const updatedUser = await User.findByIdAndUpdate(
     req.user.id,
@@ -88,8 +120,12 @@ exports.getMyTours = catchAsync(async (req, res, next) => {
   res.status(200).render('overview', {
     title: 'My Bookings',
     tours,
+    reviewButton:true
   });
+
 });
+
+
 
 // exports.updateUserData = catchAsync(async (req, res, next) => {
 //   const updatedUser = await User.findByIdAndUpdate(
